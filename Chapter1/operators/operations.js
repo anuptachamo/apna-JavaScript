@@ -11,8 +11,8 @@ console.log("a * b = ", a*b)
 // Modulus (remainder operator)
 console.log("a % b = ", a%b)   //output =show remainder
 
-// Exponentiation ( power operators) --yo ni bujena 
-console.log(" power operator of a ** b = ", a**b) 
+// Exponentiation ( power operators) 
+console.log(" power operator of a ** b = ", a**b) //10^2 =100
 
 // Increment
 let c =3
