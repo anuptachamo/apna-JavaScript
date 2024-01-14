@@ -9,3 +9,10 @@
 <!-- ?How to run JavaScript Code
         *1. Open terminal
         *2. node file_name 
+
+<!-- TODO:To use prompt you need to install prompt-sync
+        *ask user for input -->
+
+
+
+
