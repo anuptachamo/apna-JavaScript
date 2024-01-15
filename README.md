@@ -2,7 +2,7 @@
         ? how to clear console code?
         *Clear => ctrl + L 
         
-        ? how to entry in age folder: cd folderName
+        ? how to entry in any folder: cd folderName
         ? hoe to come out from folder: cd .. -->
 
 
