@@ -11,4 +11,4 @@ console.log(primary.concat(secondary)) //concat two arrays
 
 
 //reverse example
-console.log(primary.reverse())  //reverse an array
+console.log(primary.reverse())  //reverse an array 
