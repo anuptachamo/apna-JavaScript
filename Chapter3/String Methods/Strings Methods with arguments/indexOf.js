@@ -11,7 +11,6 @@
  */
 
 let str = "iloveCoding";  
-    
         console.log(str.indexOf("love") )    //1
         console.log(str.indexOf("J") )    //-1(not found)
         console.log(str.indexOf("o") )     //2(only 1 index)
