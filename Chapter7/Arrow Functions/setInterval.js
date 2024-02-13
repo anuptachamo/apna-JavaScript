@@ -27,3 +27,5 @@ let id2 = setInterval( () =>{
 }, 3000)
 
 clearInterval(id2)
+
+
