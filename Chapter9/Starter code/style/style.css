@@ -2,6 +2,11 @@ body {
     font-family: Arial;
   }
   
+
+  .green{
+    color: green;
+    text-decoration: underline;
+  }
   #mainImg {
     width: 35%;
   }
