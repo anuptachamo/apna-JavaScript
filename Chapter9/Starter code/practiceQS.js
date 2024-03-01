@@ -40,7 +40,7 @@ console.dir(div.classList.add("div"));   //given new class name to new div for s
 console.dir(body.append(div));  //print div under body tag
 
 let h1 = document.createElement("h1"); //again created new h1
-console.dir((div.innerText = "I'm in a div")); //added new text to new h1 tag
+console.dir((h1.innerText = "I'm in a div")); //added new text to new h1 tag
 console.dir(div.append(h1)); //print new h1 tag under a new div
 
 let p = document.createElement("p"); //again created new p tag
