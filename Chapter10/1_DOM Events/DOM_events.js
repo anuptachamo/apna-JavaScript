@@ -23,3 +23,8 @@
  *          console.log("button clicked");
  *      });
  */
+
+/**
+ *  ? this in Event Listeners
+ *      When 'this' is used in a callback of event handler of something, it refers to that something.
+ */
