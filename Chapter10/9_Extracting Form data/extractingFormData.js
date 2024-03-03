@@ -10,7 +10,7 @@ form.addEventListener("submit", function (event) {
   //   Alternative of code line no. 7 to 8
   console.dir(form);
   console.dir(form.elements);
-  let user = this.elements[0];
+  let user = this.elements[0];  //alternative of this line --> form.elements[0]
   let password = this.elements[1];
 
   console.dir(user);
