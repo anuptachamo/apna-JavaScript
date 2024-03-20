@@ -19,13 +19,10 @@ function savetoDb(data) {
   });
 }
 
-let request = savetoDb("Something Special"); //req = promise object
-request
+savetoDb("Something Special") 
   .then(() => {
     console.log("promise was resolved");
-    console.log(request);
   })
   .catch(() => {
     console.log("promise was rejected");
-    console.log(request);
   });
