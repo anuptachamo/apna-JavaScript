@@ -23,7 +23,26 @@ document.addEventListener("keypress", function () {
   }
 });
 
+function gameFlash(btn) {
+  btn.classList.add("flash"); //add new class name
+
+  //   remove gameflash btn in 1 sec vaneko
+  setTimeout(function () {
+    btn.classList.remove("flash");
+  }, 250);
+}
+
+function userFlash(btn) {
+  btn.classList.add("userflash"); //add new class name
+
+  //   remove userflash btn in 1 sec vaneko
+  setTimeout(function () {
+    btn.classList.remove("userflash");
+  }, 250);
+}
+
 function levelUp() {
+  userSeq = []; //userSeq will be reset
   level++;
   h2.innerText = `Level ${level}`; //h2 ko value innerText ma baseko print hune
 
@@ -32,17 +51,52 @@ function levelUp() {
   let randomColor = btns[randIdx];
   let randomBtn = document.querySelector(`.${randomColor}`);
 
-  console.log(randIdx); //kun random index choose gareko tyo show hune vayo
-  console.log(randomColor); //kun random color choose vako tyo show hune vayo
-  console.log(randomBtn);
-  btnFlash(randomBtn);
+  // console.log(randIdx); //kun random index choose gareko tyo show hune vayo
+  // console.log(randomColor); //kun random color choose vako tyo show hune vayo
+  // console.log(randomBtn);
+  gameSeq.push(randomColor);
+  console.log(gameSeq);
+  gameFlash(randomBtn);
 }
 
-function btnFlash(btn) {
-  btn.classList.add("flash"); //add new class name for
+function checkAns(idx) {
+  if (userSeq[idx] === gameSeq[idx]) {
+    if (userSeq.length == gameSeq.length) {
+      setTimeout(levelUp, 1000); //if userSeq and gameSeq match then after 1sec paxii matra level up hunxa
+    }
+  } else {
+    h2.innerHTML = `Game Over! Your score was <b>${level}</b><br> Press any key to start.`;
 
-  //   remove flash btn in 1 sec vaneko
-  setTimeout(function () {
-    btn.classList.remove("flash");
-  }, 250);
+    document.querySelector("body").style.backgroundColor = "red"; //gameover vaye paxi body ma red color show hunxa
+
+    setTimeout(function () {
+      document.querySelector("body").style.backgroundColor = "white"; //gameover vaye paxi body ma red color show hunxa ani 150ms paxi white show hunxa
+    }, 150); //150 mili-sec paxi back to previous
+
+    reset();
+  }
+}
+
+function btnPress() {
+  let btn = this;
+  userFlash(btn);
+
+  //kun id ko button laii press gareko teslaii track garxa
+  userColor = btn.getAttribute("id");
+  userSeq.push(userColor);
+
+  checkAns(userSeq.length - 1); //checking last button
+}
+
+let allBtns = document.querySelectorAll(".btn");
+for (btn of allBtns) {
+  btn.addEventListener("click", btnPress);
+}
+
+// after game over reseting all
+function reset() {
+  started = false;
+  gameSeq = [];
+  userSeq = [];
+  level = 0;
 }
