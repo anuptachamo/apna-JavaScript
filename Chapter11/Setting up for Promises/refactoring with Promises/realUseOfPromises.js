@@ -19,9 +19,17 @@ function savetoDb(data) {
   });
 }
 
-savetoDb("Something Special") 
+savetoDb("Something Special")
   .then(() => {
-    console.log("promise was resolved");
+    console.log("Data1 saved.");
+    return savetoDb("helloworld");
+  })
+  .then(() => {
+    console.log("data2 saved");
+    return savetoDb("anup");
+  })
+  .then(() =>{
+        console.log("Data3 saved");
   })
   .catch(() => {
     console.log("promise was rejected");
