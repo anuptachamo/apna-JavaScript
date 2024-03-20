@@ -6,6 +6,8 @@
  *  ?simply first understand Promises is a object.
  *      ?In Promises we have resolve and reject, mean success and failure.
  *      ?In Promises we have then() and catch() function, then is use after fulfilled and catch is use after reject
+ *
+ *      ?promises are rejected and resolved with some data (valid results or errors)
  */
 
 function savetoDb(data) {
@@ -20,17 +22,22 @@ function savetoDb(data) {
 }
 
 savetoDb("Something Special")
-  .then(() => {
+  .then((result) => {
     console.log("Data1 saved.");
+    console.log("result of promise: ", result);
     return savetoDb("helloworld");
   })
-  .then(() => {
+  .then((result) => {
     console.log("data2 saved");
+    console.log("result of promise: ", result);
     return savetoDb("anup");
   })
-  .then(() =>{
-        console.log("Data3 saved");
+  .then((result) => {
+    console.log("Data3 saved");
+    console.log("result of promise: ", result);
   })
-  .catch(() => {
+  .catch((error) => {
     console.log("promise was rejected");
+    console.log("error of promise: ", error);
+
   });
